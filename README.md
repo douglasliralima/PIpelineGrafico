@@ -15,7 +15,7 @@ São fundamentais em nosso Pipeline durante a transformação no espaço da câm
 
 Inicialmente passamos todos os objetos em seus respectivos espaços, para um contendo todos eles, que chamamos de espaço do universo, através da Matriz Model:
 
-(Imagem do objeto-universo)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20objeto-universo.jpg">
 
 Através de uma outra matriz que chamamos de View, definimos o espaço do universo em um espaço da câmera, que será a representação de nossos olhos na cena:
 
