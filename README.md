@@ -67,7 +67,7 @@ Ao aplicarmos esse conceito em um sistema 3D e usando o sistema de coordenadas p
  - Translação
 Em relação a translação temos um dos motivos da implementação de coordenadas homogêneas em nosso pipeline, pois mesmo que no espaço das coordenadas cartesianas nós não consigamos expor uma translação por meio de uma matriz, isso é possível nas coordenadas homogêneas.
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20de%20uma%20transla%C3%A7%C3%A3o.jpg">
-			(Matrizes para translação)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matrizes%20para%20transla%C3%A7%C3%A3o.jpg">
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
 ## Espaço da Tela - Espaço da Câmera
