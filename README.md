@@ -74,4 +74,12 @@ Em relação a translação temos um dos motivos da implementação de coordenad
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
 ## Espaço da Tela -(Matrix View)- Espaço da Câmera
-
+Tendo agora nosso objeto modelado e colocado no espaço do universo, vamos deixar todos em eles em relação ao espaço da câmera, para realizar esse feito, primeiro precisamos definir os vetores respectivamente dessa câmera.
+(Imagem da câmera)
+Para fazermos isso, vamos precisar de dois conceitos, o primeiro é que, para definir a câmera, precisamos de dois pontos, um localizando a posição da câmera e outro em outro ponto no espaço do universo para definir onde ela está olhando inicialmente:
+(ponto posição e lock at)
+Com esses dois pontos, podemos formar um vetor chamado vetor de direção:
+(Direction)
+Tendo isso em mãos, podemos determinar o vetor z da base da câmera, normalizando ele e pegando respectivamente sua inversa:
+(Zc)
+O segundo conceito é o que chamamos do vetor de up, ele é basicamente algo que diz onde está a "cabeça" do Cameraman
