@@ -31,7 +31,7 @@ De uma visão ampla, nosso pipeline vai assumir a seguinte sequência:
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20pipeline%20completo.jpg">
 
 ## Load da Suzanne.obj 
-O modelo que nós usamos foi a Suzanne, que é um arquivo .obj padrão do Blender, para trabalharmos com esse tipo de arquivo, foi necessário a utilização de uma biblioteca fornecida previamente pelo professor, conhecida como Obj-Loader.
+O modelo que nós usamos foi a Suzanne, que é um arquivo .obj padrão do Blender. Para trabalharmos com esse tipo de arquivo, foi necessário a utilização de uma biblioteca fornecida previamente pelo professor, conhecida como Obj-Loader.
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Suzanne.png">
 
