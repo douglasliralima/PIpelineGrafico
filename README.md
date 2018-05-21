@@ -33,7 +33,7 @@ De uma visão ampla, nosso pipeline vai assumir a seguinte sequência:
 ## Loador da Suzanne.obj 
 Xerxes, trabalhe aqui!
 
-## Espaço do Objeto - Espaço da Tela
+## Espaço do Objeto -(Matrix Model)- Espaço da Tela
 Esse é o espaço que basicamente vai pegar os vértices no espaço do objeto e o transfere para um outro espaço contendo todos os objetos da cena, chamamos esse local como o espaço do objeto, nesse espaço estaremos, assim como pedido pelo professor, todos os vértices no sistema de coordenadas da mão direita.
 Para isso nos vamos usar uma matriz que chamamos de matriz de modelagem, também conhecida como modeling matrix ou model, nela nós vamos aplicar 4 transformações lineares, essas são úteis por manter o paralelismo e poder ser exposta por matrizes, as de rotação, translação escala e shear, de maneira distinta para cada um dos objetos.
 Como vamos aplicamos a coordenada homogênea já na model, vamos exemplificar as coisas já com ela.
@@ -71,5 +71,5 @@ Em relação a translação temos um dos motivos da implementação de coordenad
 
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
-## Espaço da Tela - Espaço da Câmera
+## Espaço da Tela -(Matrix View)- Espaço da Câmera
 
