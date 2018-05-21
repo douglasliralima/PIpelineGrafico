@@ -83,3 +83,7 @@ Com esses dois pontos, podemos formar um vetor chamado vetor de direção:
 Tendo isso em mãos, podemos determinar o vetor z da base da câmera, normalizando ele e pegando respectivamente sua inversa:
 (Zc)
 O segundo conceito é o que chamamos do vetor de up, ele é basicamente algo que diz onde está a "cabeça" do Cameraman
+
+### Vídeo da Rotação
+
+https://youtu.be/kLTx-9PLFSw
