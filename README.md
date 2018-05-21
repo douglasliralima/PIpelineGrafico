@@ -19,16 +19,16 @@ Inicialmente passamos todos os objetos em seus respectivos espaços, para um con
 
 Através de uma outra matriz que chamamos de View, definimos o espaço do universo em um espaço da câmera, que será a representação de nossos olhos na cena:
 
-(Imagem da câmera nos personagens)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20da%20c%C3%A2mera%20nos%20personagens.jpg">
 
 Aplicamos então uma matriz de projeção nesse espaço, para podermos definir se o objeto será visto em 3D(Projeção Perspectiva) ou em 2D(Projeção Paralela), simplesmente alterando a coordenada homogênea do espaço, esse espaço é conhecido como espaço de recorte:
 
-(Imagem da diferença de projeção)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20da%20diferen%C3%A7a%20de%20proje%C3%A7%C3%A3o.jpg">
 
 Nós então dividimos todas as coordenadas pela atual valor na coordenada homogênea w, normalizando seu valor para 1, mas deixando as coordenadas x, y e z distorcidas para dar o efeito de projeção perspectiva, caso seja projeção ortogonal não haverá distorção, logo podemos normalizar os nossos valores para que finalmente pode ser passado para o espaço da tela.
 De uma visão ampla, nosso pipeline vai assumir a seguinte sequência:
 
-(Imagem do pipeline completo)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20pipeline%20completo.jpg">
 
 ## Loador da Suzanne.obj 
 Xerxes, trabalhe aqui!
