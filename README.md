@@ -42,29 +42,31 @@ Como vamos aplicamos a coordenada homogênea já na model, vamos exemplificar as
 Antes de observarmos as nossas transformações é valido ver um pouco sobre o principio das coordenadas homogêneas em nosso pipeline.
 Os benefícios desse sistema de coordenada se torna visível também em outras partes do pipeline, como pode ser observado para fazermos as nossas projeções, mas aqui ele é especialmente útil quando tratamos de translações.
 Em resumo, podemos ir ao espaço das coordenadas homogêneas e voltar para o espaço euclidiano aplicando as seguinte transformações:
-		(Formulas das transformações em homogênea)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Formulas%20das%20transforma%C3%A7%C3%B5es%20em%20homog%C3%AAnea.jpg">
 
  - Escala
 Esse é o tipo mais fácil de transformação, partindo do principio que cada vértice do objeto será composto por uma matriz 1x1, nos simplesmente multiplicamos, multiplicamos todos os vetores:
-				(Imagem da escala)
-				(Matriz de escala)
-				
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20da%20escala.jpg">
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20de%20escala.jpg">				
  - Shear
 Basicamente nós teremos no shear uma das retas uma coordenada presa, sendo que a outra irá se deslocando, vamos pegar o shear em x para exemplificar, veja que a medida que se sobe em y, os valores em x vão aumentando
-			(Imagem do shear em x)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20shear%20em%20x.jpg">
 Basicamente a matriz em shear que poderíamos ter em 3D, já incluindo a coordenada homogênea seriam variações dessas, dependendo de para onde o shear for ocorrer:
-			(Matriz shear em z)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20shear%20em%20z.jpg">
+
  - Rotação
 Utilizaremos aqui o conceito de coordenadas polares que são relativamente simples para se obter das coordenadas cartesianas:
-		(Imagem Polares)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20Polares.jpg">
+
 Com isso em mente, usamos uma simples identidade trigonométrica, conseguimos chegar na matriz respectiva a rotação:
-		(Matriz de rotação)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20de%20rota%C3%A7%C3%A3o.jpg">
+
 Ao aplicarmos esse conceito em um sistema 3D e usando o sistema de coordenadas polares, vamos ter que rodar um dos eixos por vez em nosso sistema de vertices:
-		(matrizes de rotação em 3D homogênea)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matrizes%20de%20rota%C3%A7%C3%A3o%20em%203D%20homog%C3%AAnea.jpg">
 
  - Translação
 Em relação a translação temos um dos motivos da implementação de coordenadas homogêneas em nosso pipeline, pois mesmo que no espaço das coordenadas cartesianas nós não consigamos expor uma translação por meio de uma matriz, isso é possível nas coordenadas homogêneas.
-			(Imagem de uma translação)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20de%20uma%20transla%C3%A7%C3%A3o.jpg">
 			(Matrizes para translação)
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
