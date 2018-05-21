@@ -62,12 +62,14 @@ Com isso em mente, usamos uma simples identidade trigonométrica, conseguimos ch
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20de%20rota%C3%A7%C3%A3o.jpg">
 
 Ao aplicarmos esse conceito em um sistema 3D e usando o sistema de coordenadas polares, vamos ter que rodar um dos eixos por vez em nosso sistema de vertices:
-<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matrizes%20de%20rota%C3%A7%C3%A3o%20em%203D%20homog%C3%AAnea.jpg">
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20de%20uma%20transla%C3%A7%C3%A3o.jpg">
 
  - Translação
 Em relação a translação temos um dos motivos da implementação de coordenadas homogêneas em nosso pipeline, pois mesmo que no espaço das coordenadas cartesianas nós não consigamos expor uma translação por meio de uma matriz, isso é possível nas coordenadas homogêneas.
-<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20de%20uma%20transla%C3%A7%C3%A3o.jpg">
+
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matrizes%20para%20transla%C3%A7%C3%A3o.jpg">
+
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
 ## Espaço da Tela - Espaço da Câmera
