@@ -47,7 +47,8 @@ Em resumo, podemos ir ao espaço das coordenadas homogêneas e voltar para o esp
  - Escala
 Esse é o tipo mais fácil de transformação, partindo do principio que cada vértice do objeto será composto por uma matriz 1x1, nos simplesmente multiplicamos, multiplicamos todos os vetores:
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20da%20escala.jpg">
-<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20de%20escala.jpg">				
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20de%20escala.jpg">	
+
  - Shear
 Basicamente nós teremos no shear uma das retas uma coordenada presa, sendo que a outra irá se deslocando, vamos pegar o shear em x para exemplificar, veja que a medida que se sobe em y, os valores em x vão aumentando
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20shear%20em%20x.jpg">
