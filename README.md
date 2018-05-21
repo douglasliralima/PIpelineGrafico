@@ -30,8 +30,10 @@ De uma visão ampla, nosso pipeline vai assumir a seguinte sequência:
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20pipeline%20completo.jpg">
 
-## Loador da Suzanne.obj 
-Xerxes, trabalhe aqui!
+## Load da Suzanne.obj 
+O modelo que nós usamos foi a Suzanne, que é um arquivo .obj padrão do Blender, para trabalharmos com esse tipo de arquivo, foi necessário a utilização de uma biblioteca fornecida previamente pelo professor, conhecida como Obj-Loader.
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Suzanne.png">
 
 ## Espaço do Objeto -(Matrix Model)- Espaço da Tela
 Esse é o espaço que basicamente vai pegar os vértices no espaço do objeto e o transfere para um outro espaço contendo todos os objetos da cena, chamamos esse local como o espaço do objeto, nesse espaço estaremos, assim como pedido pelo professor, todos os vértices no sistema de coordenadas da mão direita.
