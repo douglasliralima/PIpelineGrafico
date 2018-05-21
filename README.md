@@ -86,4 +86,5 @@ O segundo conceito é o que chamamos do vetor de up, ele é basicamente algo que
 
 ### Vídeo da Rotação
 
-https://youtu.be/kLTx-9PLFSw
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kLTx-9PLFSw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
