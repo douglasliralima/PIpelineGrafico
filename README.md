@@ -109,6 +109,13 @@ O que fazemos então para criar a matriz de projeção é multiplicar os vetores
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20para%20proje%C3%A7%C3%A3o.jpg">
 
+
+## Espaço de corte -(Divisão por w)- Espaço Canônico
+No espaço canônico nos retornamos o valor da coordenada homogênea para 1, usando um w com o seu mesmo valor e dividindo todas as coordenadas por ela:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/w.jpg">
+
+
 ### Vídeo da Rotação
 
 [![IMAGE ALT TEXT HERE](https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Suzanne_Rotation1.png)](https://www.youtube.com/watch?v=kLTx-9PLFSw&feature=youtu.be)
