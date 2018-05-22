@@ -1,9 +1,9 @@
 # Introdução
-No 1º trabalho, foi proposto pelo professor Christian Azambuja Pagot a criação de três funções PutPixel, DrawLine e DrawTriangle, que basicamente rasterizavam as linhas na tela de acordo com primitivas que passávamos para o programa.
-Nessa 2º tarefa, o objetivo era pegar os vértices no espaço do objeto, onde por meio de transformações, levar eles para o espaço da tela. Para exemplificação do funcionamento do Pipeline, nos foi pedido para que carregássemos a Suzanne, um modelo padrão do blender, em um arquivo obj e através de um loader, carregamos seus vértices e usando o nosso pipeline, o imprimisse na tela, com auxílio do que foi desenvolvido no primeiro trabalho.
-Primeiro vamos exemplificar o funcionamento teórico do pipeline e depois vamos demonstrar como o implementamos na prática
+No 1º trabalho, foi proposto pelo professor Christian Azambuja Pagot a criação de três funções PutPixel, DrawLine e DrawTriangle, elas nos auxiliavam em rasterizavar as linhas na tela de acordo com primitivas que passávamos para o programa.
+Nessa 2º tarefa, o objetivo era pegar os vértices no espaço do objeto, e por meio das transformações que vamos ver mais a frente, levar eles para o espaço da tela. Para exemplificação do funcionamento do Pipeline, nos foi pedido que carregássemos a Suzanne, um modelo padrão do blender, que o arquivo obj nos foi dado pelo professor para que, através de algum loader, carregamos seus vértices e usassemos o nosso pipeline, o imprimisse na tela, com auxílio do que foi desenvolvido no primeiro trabalho.
+Vamos exemplificar o funcionamento teórico e prático do pipeline no tópico a seguir
 
-# Bases Teóricas
+# Bases Teóricas/Praticas
 Faremos aqui transformações geométricas para que possamos matematicamente passar nossa modelagem no espaço do universo até o espaço da tela, usando:
 
  - Matrizes
@@ -25,7 +25,7 @@ Aplicamos então uma matriz de projeção nesse espaço, para podermos definir s
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20da%20diferen%C3%A7a%20de%20proje%C3%A7%C3%A3o.jpg">
 
-Nós então dividimos todas as coordenadas pela atual valor na coordenada homogênea w, normalizando seu valor para 1, mas deixando as coordenadas x, y e z distorcidas para dar o efeito de projeção perspectiva, caso seja projeção ortogonal não haverá distorção, logo podemos normalizar os nossos valores para que finalmente pode ser passado para o espaço da tela.
+Dividimos todas as coordenadas pela coordenada homogênea, dando seu valor para uma variável w e a dividindo todas as coordenadas por ela e reconfigurando seu valor para 1, mas deixando as coordenadas x, y e z distorcidas para dar o efeito de projeção perspectiva, caso seja projeção ortogonal não haverá distorção, logo podemos normalizar os nossos valores para que finalmente pode ser passado para o espaço da tela.
 De uma visão ampla, nosso pipeline vai assumir a seguinte sequência:
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Imagem%20do%20pipeline%20completo.jpg">
@@ -36,9 +36,9 @@ O modelo que nós usamos foi a Suzanne, que é um arquivo .obj padrão do Blende
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Suzanne.png">
 
 ## Espaço do Objeto -(Matrix Model)- Espaço da Tela
-Esse é o espaço que basicamente vai pegar os vértices no espaço do objeto e o transfere para um outro espaço contendo todos os objetos da cena, chamamos esse local como o espaço do objeto, nesse espaço estaremos, assim como pedido pelo professor, todos os vértices no sistema de coordenadas da mão direita.
-Para isso nos vamos usar uma matriz que chamamos de matriz de modelagem, também conhecida como modeling matrix ou model, nela nós vamos aplicar 4 transformações lineares, essas são úteis por manter o paralelismo e poder ser exposta por matrizes, as de rotação, translação escala e shear, de maneira distinta para cada um dos objetos.
-Como vamos aplicamos a coordenada homogênea já na model, vamos exemplificar as coisas já com ela.
+Esse é o espaço que basicamente vai pegar os vértices no espaço do objeto e o transferir para um outro espaço contendo todos os objetos da cena, chamamos esse local como o espaço do objeto, nesse espaço teremos, assim como pedido pelo professor, todos os vértices no sistema de coordenadas da mão direita.
+Para isso nos vamos usar uma matriz que chamamos de matriz de modelagem, também conhecida como modeling matrix ou model, nela nós vamos aplicar 4 transformações afim, essas são úteis por manter o paralelismo e poder ser exposta por matrizes,essas transformação são as de rotação, translação escala e shear, de maneira distinta para cada um dos objetos.
+Como vamos aplicamos a coordenada homogênea já na model, vamos exemplificar algumas das coisas já com ela.
 
 ### Coordenadas homogêneas
 Antes de observarmos as nossas transformações é valido ver um pouco sobre o principio das coordenadas homogêneas em nosso pipeline.
