@@ -69,22 +69,55 @@ Ao aplicarmos esse conceito em um sistema 3D e usando o sistema de coordenadas p
 
 ### Translação
 Em relação a translação temos um dos motivos da implementação de coordenadas homogêneas em nosso pipeline, pois mesmo que no espaço das coordenadas cartesianas nós não consigamos expor uma translação por meio de uma matriz, isso é possível nas coordenadas homogêneas.
+
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matrizes%20para%20transla%C3%A7%C3%A3o.jpg">
 
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
 ## Espaço da Tela -(Matrix View)- Espaço da Câmera
 Tendo agora nosso objeto modelado e colocado no espaço do universo, vamos deixar todos em eles em relação ao espaço da câmera, para realizar esse feito, primeiro precisamos definir os vetores respectivamente dessa câmera.
-(Imagem da câmera)
-Para fazermos isso, vamos precisar de dois conceitos, o primeiro é que, para definir a câmera, precisamos de dois pontos, um localizando a posição da câmera e outro em outro ponto no espaço do universo para definir onde ela está olhando inicialmente:
-(ponto posição e lock at)
-Com esses dois pontos, podemos formar um vetor chamado vetor de direção:
-(Direction)
+Para fazermos isso, vamos precisar de dois conceitos, o primeiro é que, para definir a câmera, precisamos de dois pontos, um localizando a posição da câmera e outro em outro ponto no espaço do universo para definir onde ela está olhando inicialmente, com esses dois pontos, podemos formar um vetor chamado vetor de direção:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Direction.jpg">
+
 Tendo isso em mãos, podemos determinar o vetor z da base da câmera, normalizando ele e pegando respectivamente sua inversa:
-(Zc)
-O segundo conceito é o que chamamos do vetor de up, ele é basicamente algo que diz onde está a "cabeça" do Cameraman
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Zc.jpg">
+
+O segundo conceito é o que chamamos do vetor de up, ele é basicamente algo que diz onde está a "cabeça" do Camereman:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Up.jpg">
+
+Agora podemos conseguir com um produto vetorial a coordenada Xc e através dela a coordenada Yc:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Xc%20Yc.jpg">
+
+Para construirmos respectivamente a **View Matrix** que pegará os vetores na base do universo e a transformamos na matriz que faz essa mudança para uma base fora da origem que é representada pela base da câmera:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/View%20Matrix.jpg">
+
+## Espaço da Câmera -(Projection)- Espaço de corte
+
+Quanto mais próximo um objeto está de nós, maior ele parece, quanto mais longe, menor, a **matriz de projeção** basicamente vai preparar a nossa coordenada homogênea para aplicar esse efeito distorcendo o nosso objeto.
+Podemos ver na imagem abaixo que fabricamos um plano, que chamamos de ViewPlane para pegar os valores que usaremos para alterar os pontos do objeto e dar essa ilusão de projeção.
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/ViewPlane.jpg">
+
+Veja que quando mais nos aproximarmos do Viw plane, mais perto estaremos do ponto C e respectivamente teremos um p' maior.
+
+O que fazemos então para criar a matriz de projeção é multiplicar os vetores por duas matrizes, uma para levar trazer o centro focal até a origem através da translação e uma matriz P para fazer a modificação da projeção usando a coordenada homogênea.
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20para%20proje%C3%A7%C3%A3o.jpg">
+
+
+## Espaço de corte -(Divisão por w)- Espaço Canônico
+No espaço canônico nos retornamos o valor da coordenada homogênea para 1, usando um w com o seu mesmo valor e dividindo todas as coordenadas por ela:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/w.jpg">
+
 
 ### Vídeo da Rotação
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kLTx-9PLFSw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Suzanne_Rotation1.png)](https://www.youtube.com/watch?v=kLTx-9PLFSw&feature=youtu.be)
+
 
