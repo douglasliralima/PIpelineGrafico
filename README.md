@@ -69,32 +69,33 @@ Ao aplicarmos esse conceito em um sistema 3D e usando o sistema de coordenadas p
 
 ### Translação
 Em relação a translação temos um dos motivos da implementação de coordenadas homogêneas em nosso pipeline, pois mesmo que no espaço das coordenadas cartesianas nós não consigamos expor uma translação por meio de uma matriz, isso é possível nas coordenadas homogêneas.
+
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matrizes%20para%20transla%C3%A7%C3%A3o.jpg">
 
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
 ## Espaço da Tela -(Matrix View)- Espaço da Câmera
 Tendo agora nosso objeto modelado e colocado no espaço do universo, vamos deixar todos em eles em relação ao espaço da câmera, para realizar esse feito, primeiro precisamos definir os vetores respectivamente dessa câmera.
-(Imagem da câmera)
+Para fazermos isso, vamos precisar de dois conceitos, o primeiro é que, para definir a câmera, precisamos de dois pontos, um localizando a posição da câmera e outro em outro ponto no espaço do universo para definir onde ela está olhando inicialmente, com esses dois pontos, podemos formar um vetor chamado vetor de direção:
 
-Para fazermos isso, vamos precisar de dois conceitos, o primeiro é que, para definir a câmera, precisamos de dois pontos, um localizando a posição da câmera e outro em outro ponto no espaço do universo para definir onde ela está olhando inicialmente:
-(ponto posição e lock at)
-
-Com esses dois pontos, podemos formar um vetor chamado vetor de direção:
-(Direction)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Direction.jpg">
 
 Tendo isso em mãos, podemos determinar o vetor z da base da câmera, normalizando ele e pegando respectivamente sua inversa:
-(Zc)
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Zc.jpg">
 
 O segundo conceito é o que chamamos do vetor de up, ele é basicamente algo que diz onde está a "cabeça" do Camereman:
-(Up)
 
-Agora nos conseguimos todos os outros vetores basicamente através de produtos vetoriais:
-(Xc e Yc)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Up.jpg">
+
+Agora podemos conseguir com um produto vetorial a coordenada Xc e através dela a coordenada Yc:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Xc%20Yc.jpg">
 
 Para construirmos respectivamente a **View Matrix** que pegará os vetores na base do universo e a transformamos na matriz que faz essa mudança para uma base fora da origem que é representada pela base da câmera:
 
 (View Matrix)
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/View%20Matrix.jpg">
 
 ### Vídeo da Rotação
 
