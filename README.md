@@ -162,8 +162,25 @@ Após isso, criamos uma grande matriz unindo todas as nossas matrizes do pipelin
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Uniao_Matrizes.png">
 
-# Resultados: Vídeo da Rotação
+# Resultados
+ Conseguimos rasterizar a Suzzane na tela, para aplicar a rotação nela de modo definitivo e de forma a apagar as linhas da rasterização anterior, basicamente faziamos triangulos pretos preenchidos em subsequência a rotação para poder apagar o que estava sendo renderizado na tela.
 
 [![IMAGE ALT TEXT HERE](https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Suzanne_Rotation1.png)](https://www.youtube.com/watch?v=kLTx-9PLFSw&feature=youtu.be)
 
+# Melhorias
+Renderizar o triangulo preto entre as rasterizações da linha consomia muito poder de processamento do computador, caso tivessemos mais tempo para aplicar a rotação pensando em uma outra forma de aplicar o apagamento das linhas rasterizadas, teriamos uma melhora significativa no desempenho
 
+
+# Dificuldades Encontradas
+A parte mais complicada realmente se deve em relação a carregar o arquivo obj na tela, essa foi a parte que levou mais tempo. Por termos preferido começar tentando seguir sequencialmente aquilo que foi pedido e não estarmos tendo nenhum resultado, isso nos desmotivou bastante a medida que o tempo passava, devido a erros usando o Assimp e por não saber utilizar direito do CMake
+Quando o professor publicou um outro loader isso facilitou bastante o trabalho e andou muito mais rapidamente o projeto.
+
+# Bibliotecas Utilizadas
+ - glm : Foi usado na manipulação de todo o nosso pipeline
+ - glut : Nos serviu para criar um ambiente propício ao desenvolvimento gráfico
+ - Obj-Loader : Loader fornecido pelo professor para carregar o arquivo .obj
+ 
+ # Material Utilizado
+ - Slides da aula fornecido no SIGAA da disciplina
+ - Conteúdos ministrados em sala
+ - Trechos do livro do Foley também fornecido no SIGAA da disciplina
