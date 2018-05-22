@@ -109,12 +109,15 @@ O que fazemos então para criar a matriz de projeção é multiplicar os vetores
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20para%20proje%C3%A7%C3%A3o.jpg">
 
-
 ## Espaço de corte -(Divisão por w)- Espaço Canônico
 No espaço canônico nos retornamos o valor da coordenada homogênea para 1, usando um w com o seu mesmo valor e dividindo todas as coordenadas por ela:
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/w.jpg">
 
+## Universo Canônico -(ViewPort)- Universo da tela
+Estamos praticamente no final do nosso pipeline, aqui só precisamos respeitar o sistema que as coisas são colocadas na tela e inverter o nosso a direção de nossa coordenada y e transladamos nossos vértices levando em consideração a largura(weight) e altura (height) da tela, em resumo a **MViewPort** vai vir da seguinte operação:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/MViewPort.jpg">
 
 ### Vídeo da Rotação
 
