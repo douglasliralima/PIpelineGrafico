@@ -93,6 +93,10 @@ Em relação a translação temos um dos motivos da implementação de coordenad
 
 Veja, nos pegamos a coordenada homogênea mais fácil que poderíamos (w = 1), e através disso podemos facilmente realizar uma soma em x ou y que translade respectivamente seus pontos.
 
+Para conseguirmos reproduzir isso com códigos, foi preciso importar a biblioteca OpenGL Mathematics(glm), então produzimos o seguinte código, para passarmos o nosso objeto para o espaço do universo:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Espaço_Objeto - Espaço_Universo.png">
+
 ## Espaço da Tela -(Matrix View)- Espaço da Câmera
 Tendo agora nosso objeto modelado e colocado no espaço do universo, vamos deixar todos em eles em relação ao espaço da câmera, para realizar esse feito, primeiro precisamos definir os vetores respectivamente dessa câmera.
 Para fazermos isso, vamos precisar de dois conceitos, o primeiro é que, para definir a câmera, precisamos de dois pontos, um localizando a posição da câmera e outro em outro ponto no espaço do universo para definir onde ela está olhando inicialmente, com esses dois pontos, podemos formar um vetor chamado vetor de direção:
@@ -115,6 +119,10 @@ Para construirmos respectivamente a **View Matrix** que pegará os vetores na ba
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/View%20Matrix.jpg">
 
+Dessa maneira, para passar o nosso objeto para o espaço da câmera, optamos por produzir o seguinte código:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Espaço_Universo - Espaço_Camera.png">
+
 ## Espaço da Câmera -(Projection)- Espaço de corte
 
 Quanto mais próximo um objeto está de nós, maior ele parece, quanto mais longe, menor, a **matriz de projeção** basicamente vai preparar a nossa coordenada homogênea para aplicar esse efeito distorcendo o nosso objeto.
@@ -128,15 +136,31 @@ O que fazemos então para criar a matriz de projeção é multiplicar os vetores
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Matriz%20para%20proje%C3%A7%C3%A3o.jpg">
 
+Agora em formato de código, nós obtivemos o resultado dessa mudança da seguinte maneira:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Espaço_Câmera - Espaço_Projetivo.png">
+
 ## Espaço de corte -(Divisão por w)- Espaço Canônico
 No espaço canônico nos retornamos o valor da coordenada homogênea para 1, usando um w com o seu mesmo valor e dividindo todas as coordenadas por ela:
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/w.jpg">
 
-## Universo Canônico -(ViewPort)- Universo da tela
+Para fazer essa mudança do espaço de corte para o espaço canônico em formato de código, apenas foi preciso seguir as especificações sobre essa etapa do processo e conseguimos atingir o nosso objeto da seguinte maneira:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Espaço_Recorte - Espaço_Canonico.png">
+
+## Espaço Canônico -(ViewPort)- Espaço da tela
 Estamos praticamente no final do nosso pipeline, aqui só precisamos respeitar o sistema que as coisas são colocadas na tela e inverter o nosso a direção de nossa coordenada y e transladamos nossos vértices levando em consideração a largura(weight) e altura (height) da tela, em resumo a **MViewPort** vai vir da seguinte operação:
 
 <img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/MViewPort.jpg">
+
+Agora, chegando na etapa final do nosso pipeline, nós precisamos passar o nosso objeto que está no espaço canônico para o espaço da tela, então o fizemos da seguinte forma:
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Espaço_Canônico - Espaço_Tela.png">
+
+Após isso, criamos uma grande matriz unindo todas as nossas matrizes do pipeline para facilitar algumas mudanças que poderiam ocorrer eventualmente, como também para futuros testes com outros objetos.
+
+<img src="https://github.com/douglasliralima/PIpelineGrafico/blob/master/Imagens/Uniao_Matrizes.png">
 
 # Resultados: Vídeo da Rotação
 
